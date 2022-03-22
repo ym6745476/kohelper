@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#20EFEFEF" />
+            <corners android:radius="200dip" />
+        </shape>
+    </item>
+
+    <item android:state_focused="true" android:state_pressed="false">
+        <shape>
+            <solid android:color="#20EFEFEF"/>
+            <corners android:radius="200dip"/>
+
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <solid android:color="@color/ko_app_transparent" />
+            <corners android:radius="200dip" />
+        </shape>
+    </item>
+
+</selector>
