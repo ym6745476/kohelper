@@ -1,18 +1,17 @@
 
-package com.ymbok.kohelper.utils
+package com.ymbok.kohelper.app
 
 import android.app.Activity
 import java.lang.ref.WeakReference
 import java.util.*
 
 /**
- * 管理应用程序中所有Activity。
+ * 管理应用程序中所有Activity
+ * object对象声明 单例声明
  * @author ym6745476
  * @since  2021/10/14
  */
-
-// object对象声明 单例声明
-object KoActivityCollector {
+object KoActivityStack {
 
     private val activitys = Stack<WeakReference<Activity>>()
 
@@ -21,7 +20,7 @@ object KoActivityCollector {
      *
      * @param task 将要压入栈的Activity对象
      */
-    fun pushTask(task: WeakReference<Activity>?) {
+    fun pushTask(task: WeakReference<Activity>) {
         activitys.push(task)
     }
 
@@ -30,7 +29,7 @@ object KoActivityCollector {
      *
      * @param task
      */
-    fun removeTask(task: WeakReference<Activity>?) {
+    fun removeTask(task: WeakReference<Activity>) {
         activitys.remove(task)
     }
 

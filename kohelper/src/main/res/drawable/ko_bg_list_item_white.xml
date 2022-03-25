@@ -3,23 +3,19 @@
 
     <item android:state_pressed="true">
         <shape>
-            <solid android:color="#20EFEFEF" />
-            <corners android:radius="200dip" />
+            <solid android:color="@color/ko_bg_light" />
         </shape>
     </item>
 
     <item android:state_focused="true" android:state_pressed="false">
         <shape>
-            <solid android:color="#20EFEFEF"/>
-            <corners android:radius="200dip"/>
-
+            <solid android:color="@color/ko_bg_light" />
         </shape>
     </item>
 
     <item>
         <shape>
-            <solid android:color="@color/ko_transparent" />
-            <corners android:radius="200dip" />
+            <solid android:color="@color/ko_white" />
         </shape>
     </item>
 

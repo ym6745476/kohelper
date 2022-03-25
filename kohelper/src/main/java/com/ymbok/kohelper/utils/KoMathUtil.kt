@@ -7,7 +7,9 @@ import kotlin.experimental.and
 import kotlin.math.*
 
 /**
- * 数字处理类
+ * 数字处理工具类
+ * @author ym6745476
+ * @since  2022/03/14
  */
 object KoMathUtil {
 

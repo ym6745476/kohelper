@@ -1,6 +1,11 @@
 package com.ymbok.kohelper.utils
 import java.security.MessageDigest
 
+/**
+ * MD5工具类
+ * @author ym6745476
+ * @since  2022/03/14
+ */
 object KoMd5Util {
 
     /** md5加密 */

@@ -1,4 +1,4 @@
-package com.ymbok.kohelper.utils
+package com.ymbok.kohelper.app
 
 import android.app.Activity
 import android.content.Context
@@ -6,10 +6,13 @@ import android.view.View
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.callback.NavigationCallback
 import com.alibaba.android.arouter.launcher.ARouter
+import com.ymbok.kohelper.utils.logI
 import java.lang.Boolean.parseBoolean
 import java.util.HashMap
 
 object KoActivityRouter {
+
+    val TAG: String = this.javaClass.simpleName
 
     fun clickRoute(view: View, path: String) {
         view.setOnClickListener {
@@ -24,7 +27,7 @@ object KoActivityRouter {
     }
 
     fun route(context: Context, path: String) {
-        logI("KoActivityRouter", "开始Route：$path")
+        logI(TAG, "开始Route：$path")
 
         // 如果是http  跳转到webView
         if (isHttp(path)) {

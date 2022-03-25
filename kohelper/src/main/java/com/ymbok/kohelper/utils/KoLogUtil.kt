@@ -4,7 +4,7 @@ import android.util.Log
 /**
  * 日志调试工具类。
  * @author ym6745476
- * @since  2021/10/14
+ * @since  2022/03/14
  */
 private const val VERBOSE = 1
 private const val DEBUG = 2

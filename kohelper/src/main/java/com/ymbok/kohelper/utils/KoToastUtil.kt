@@ -3,9 +3,9 @@ import android.content.Context
 import android.widget.Toast
 
 /**
- * Toast工具类。
+ * Toast工具类
  * @author ym6745476
- * @since  2021/10/14
+ * @since  2022/03/14
  */
 
 fun showToast(context: Context, message: String) {

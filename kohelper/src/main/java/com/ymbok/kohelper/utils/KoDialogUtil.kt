@@ -58,8 +58,17 @@ object KoDialogUtil {
     /**
      * 显示弹出框
      */
-    fun showViewDialog(context: Context, view: View?):AlertDialog {
-        val dialog:AlertDialog = AlertDialog.Builder(context).setView(view).create()
+    fun showViewDialog(context: Context, view: View):AlertDialog {
+        val dialog = AlertDialog.Builder(context).setView(view).create()
+        dialog.show()
+        return dialog
+    }
+
+    /**
+     * 显示层
+     */
+    fun showLayer(context: Context, view: View):AlertDialog {
+        val dialog = AlertDialog.Builder(context).setView(view).create()
         val window: Window? = dialog.window
         window?.apply {
             val attributes = attributes
@@ -68,7 +77,6 @@ object KoDialogUtil {
             window.setBackgroundDrawableResource(android.R.color.transparent)
             dialog.show()
         }
-
         return dialog
     }
 
@@ -139,8 +147,8 @@ object KoDialogUtil {
         //val maskView = View(context)
         //maskView.setBackgroundColor(0x7f000000)
 
-        val maskView = View.inflate(context, R.layout.ko_mask_view, null)
-        maskView.findViewById<LinearLayout>(R.id.mask_top_view).layoutParams.height = dip2px(context,y.toFloat()).toInt()
+        val maskView = View.inflate(context, R.layout.ko_view_mask, null)
+        maskView.findViewById<LinearLayout>(R.id.mask_top_view).layoutParams.height = KoUnitUtil.dip2px(context,y.toFloat()).toInt()
 
         maskView.fitsSystemWindows = false
         /* maskView.setOnKeyListener(object:View.OnKeyListener{

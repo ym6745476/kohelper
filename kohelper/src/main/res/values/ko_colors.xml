@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="ko_app_transparent">#00000000</color>
+    <color name="ko_color_primary">#585eaa</color>
+    <color name="ko_color_accent">#494e8f</color>
+    <color name="ko_color_disable">#9b95c9</color>
+    <color name="ko_color_primary_translucent">#20585eaa</color>
+    <color name="ko_color_accent_translucent">#20494e8f</color>
 
-    <color name="ko_app_bg">#F5F7F9</color>
-    <color name="ko_app_bg_dark">#F5F5F5</color>
-    <color name="ko_app_bg_light">#F8F8F8</color>
+    <color name="ko_white">#FFFFFF</color>
+    <color name="ko_black">#000000</color>
+    <color name="ko_transparent">#00000000</color>
 
-    <color name="ko_app_line">#F5F5F5</color>
-    <color name="ko_app_line_dark">#BDBDBD</color>
-    <color name="ko_app_line_light">#F1F1F1</color>
+    <color name="ko_bg">#F5F7F9</color>
+    <color name="ko_bg_dark">#F5F5F5</color>
+    <color name="ko_bg_light">#F8F8F8</color>
 
-    <color name="ko_app_text">#666666</color>
-    <color name="ko_app_text_dark">#333333</color>
-    <color name="ko_app_text_light">#999999</color>
+    <color name="ko_line">#F5F5F5</color>
+    <color name="ko_line_dark">#BDBDBD</color>
+    <color name="ko_line_light">#F2F2F2</color>
+
+    <color name="ko_text">#666666</color>
+    <color name="ko_text_dark">#333333</color>
+    <color name="ko_text_light">#999999</color>
+
+    <color name="ko_red">#FF5555</color>
 
 </resources>
 

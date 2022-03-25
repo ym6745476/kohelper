@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="标题"
-                android:textColor="@color/ko_app_text_dark"
+                android:textColor="@color/ko_text_dark"
                 android:textSize="15sp" />
         </LinearLayout>
 
@@ -46,7 +46,7 @@
                 android:paddingLeft="15dip"
                 android:paddingRight="15dip"
                 android:text="消息内容"
-                android:textColor="@color/ko_app_text_dark"
+                android:textColor="@color/ko_text_dark"
                 android:textSize="14sp" />
         </ScrollView>
     </LinearLayout>
@@ -70,9 +70,9 @@
                 android:id="@+id/dialog_button_cancel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/ko_button_bg"
+                android:background="@drawable/ko_button_bg_r5"
                 android:text="取消"
-                android:textColor="@color/ko_app_text_light"
+                android:textColor="@color/ko_text_light"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -88,7 +88,7 @@
                 android:id="@+id/dialog_button_ok"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/ko_button_bg"
+                android:background="@drawable/ko_button_bg_r5"
                 android:text="确定"
                 android:textColor="?attr/colorPrimary"
                 android:textSize="15sp" />
