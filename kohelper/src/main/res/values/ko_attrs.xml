@@ -13,7 +13,7 @@
         <attr name="height_ratio" format="integer"/>
     </declare-styleable>
 
-    <declare-styleable name="KoRoundImageView">
+    <declare-styleable name="KoCornerImageView">
         <attr name="radius" format="integer"/>
     </declare-styleable>
 

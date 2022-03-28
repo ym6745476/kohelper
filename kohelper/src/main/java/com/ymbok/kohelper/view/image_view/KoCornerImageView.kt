@@ -4,10 +4,12 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.Canvas
 import android.graphics.Path
-import android.os.Build
 import android.util.AttributeSet
+import android.view.View.MeasureSpec
+import androidx.appcompat.widget.AppCompatImageView
 import com.ymbok.kohelper.R
 import com.ymbok.kohelper.utils.KoUnitUtil
+import com.ymbok.kohelper.utils.KoUnitUtil.dip2px
 
 /**
  * Copyright ymbok.com
@@ -24,14 +26,13 @@ class KoCornerImageView : KoFilterImageView {
 
     constructor(context: Context) : this(context,null)
 
-    constructor(context: Context, attrs: AttributeSet?, defStyle: Int = 0) : super(context, attrs, defStyle) {
-        if (Build.VERSION.SDK_INT < 18) {
-            setLayerType(LAYER_TYPE_SOFTWARE, null)
-        }
-        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.KoRoundImageView)
+    constructor(context: Context, attrs: AttributeSet?) : this(context,attrs,0)
+
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr){
+        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.KoCornerImageView)
         radius = try {
-            val radiusDip = typedArray.getInteger(R.styleable.KoRoundImageView_radius, 0)
-            KoUnitUtil.dip2px(context, radiusDip.toFloat())
+            val radiusDip = typedArray.getInteger(R.styleable.KoCornerImageView_radius, 0)
+            dip2px(context, radiusDip.toFloat())
         } finally {
             typedArray.recycle()
         }

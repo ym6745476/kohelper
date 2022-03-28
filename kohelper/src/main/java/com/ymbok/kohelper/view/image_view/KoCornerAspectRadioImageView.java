@@ -18,26 +18,23 @@ import com.ymbok.kohelper.utils.KoUnitUtil;
  * Email 396196516@qq.com
  * Info 圆角ImageView
  */
-public class KoRoundAspectRadioImageView extends KoAspectRatioImageView {
+public class KoCornerAspectRadioImageView extends KoAspectRatioImageView {
 
     private Context context;
     private float width,height;
     private float radius = 0;
 
-    public KoRoundAspectRadioImageView(Context context) {
+    public KoCornerAspectRadioImageView(Context context) {
         this(context, null);
     }
 
-    public KoRoundAspectRadioImageView(Context context, AttributeSet attrs) {
+    public KoCornerAspectRadioImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
-        if (Build.VERSION.SDK_INT < 18) {
-            setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        }
 
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.KoRoundImageView);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.KoAspectRatioImageView);
         try {
-            int radiusDip = typedArray.getInteger(R.styleable.KoRoundImageView_radius, 0);
+            int radiusDip = typedArray.getInteger(R.styleable.KoCornerImageView_radius, 0);
             radius = KoUnitUtil.INSTANCE.dip2px(context,radiusDip);
         } finally {
             typedArray.recycle();
