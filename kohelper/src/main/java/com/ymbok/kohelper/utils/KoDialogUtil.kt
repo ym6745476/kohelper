@@ -65,17 +65,19 @@ object KoDialogUtil {
     }
 
     /**
-     * 显示层
+     * 显示全屏层
      */
     fun showLayer(context: Context, view: View):AlertDialog {
-        val dialog = AlertDialog.Builder(context).setView(view).create()
+        val dialog = AlertDialog.Builder(context).create()
+        dialog.show()
         val window: Window? = dialog.window
         window?.apply {
             val attributes = attributes
             attributes.gravity = Gravity.CENTER
             window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
             window.setBackgroundDrawableResource(android.R.color.transparent)
-            dialog.show()
+            window.setContentView(view)
+
         }
         return dialog
     }
