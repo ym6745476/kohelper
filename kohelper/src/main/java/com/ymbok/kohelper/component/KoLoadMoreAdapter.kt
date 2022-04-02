@@ -9,6 +9,13 @@ import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ymbok.kohelper.databinding.KoItemMoreBinding
 
+/**
+ * Copyright ymbok.com
+ * Author 还如一梦中
+ * Date 2022/4/2 09:13
+ * Email 396196516@qq.com
+ * Info RecyclerView LoadStateAdapter加载更多
+ */
 class KoLoadMoreAdapter(private val context : Context): LoadStateAdapter<KoLoadMoreAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, loadState: LoadState) {

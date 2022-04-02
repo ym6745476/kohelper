@@ -1,8 +1,15 @@
 package com.ymbok.kohelper.component
 
-import androidx.databinding.ViewDataBinding
+import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class KoDataBingRecyclerViewHolder(binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root) {
-    var binding: ViewDataBinding? = binding
+/**
+ * Copyright ymbok.com
+ * Author 还如一梦中
+ * Date 2022/4/2 09:13
+ * Email 396196516@qq.com
+ * Info RecyclerView.ViewHolder支持ViewDataBinding
+ */
+class KoDataBingRecyclerViewHolder(binding: Any,root: ViewGroup) : RecyclerView.ViewHolder(root) {
+    var binding: Any = binding
 }

@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 /**
  * Copyright ymbok.com
  * Author 还如一梦中
- * Date 2018/6/4 09:13
+ * Date 2022/4/1 09:13
  * Email 396196516@qq.com
  * Info 根据宽度自适应的ImageView
  */

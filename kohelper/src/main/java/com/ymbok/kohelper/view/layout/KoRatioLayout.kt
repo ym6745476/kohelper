@@ -10,9 +10,9 @@ import com.ymbok.kohelper.R
 /**
  * Copyright ymbok.com
  * Author 还如一梦中
- * Date 2018/6/4 09:13
+ * Date 2022/4/1 09:13
  * Email 396196516@qq.com
- * Info 有比例的Layout
+ * Info 可以设置比例的Layout
  */
 class KoRatioLayout : RelativeLayout {
 

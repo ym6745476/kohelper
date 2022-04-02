@@ -9,7 +9,7 @@ import com.ymbok.kohelper.R;
 /**
  * Copyright ymbok.com
  * Author 还如一梦中
- * Date 2016/12/13 09:13
+ * Date 2022/4/1 09:13
  * Email 396196516@qq.com
  * Info 可设置宽高比的ImageView
  */
