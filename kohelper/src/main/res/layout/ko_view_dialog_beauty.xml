@@ -21,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.ymbok.kohelper.view.image_view.KoSuitableImageView
+                <com.ymbok.kohelper.view.image_view.KoFitWidthImageView
                     android:id="@+id/dialog_image"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>

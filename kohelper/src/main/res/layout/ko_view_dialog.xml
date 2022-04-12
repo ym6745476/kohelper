@@ -35,7 +35,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dip">
+            android:visibility="gone"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dip">
 
             <TextView
                 android:id="@+id/dialog_message_text"
@@ -43,8 +45,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:duplicateParentState="true"
-                android:paddingLeft="15dip"
-                android:paddingRight="15dip"
+                android:paddingLeft="20dip"
+                android:paddingRight="20dip"
                 android:text="消息内容"
                 android:textColor="@color/ko_text_dark"
                 android:textSize="14sp" />
@@ -70,7 +72,7 @@
                 android:id="@+id/dialog_button_cancel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/ko_button_bg_r5"
+                android:background="@drawable/ko_button_bg_transparent"
                 android:text="取消"
                 android:textColor="@color/ko_text_light"
                 android:textSize="15sp" />
@@ -88,9 +90,9 @@
                 android:id="@+id/dialog_button_ok"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/ko_button_bg_r5"
+                android:background="@drawable/ko_button_bg_transparent"
                 android:text="确定"
-                android:textColor="?attr/colorPrimary"
+                android:textColor="@color/ko_color_primary"
                 android:textSize="15sp" />
 
         </LinearLayout>

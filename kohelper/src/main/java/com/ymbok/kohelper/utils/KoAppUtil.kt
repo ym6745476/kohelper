@@ -1,5 +1,7 @@
 package com.ymbok.kohelper.utils
 import android.app.Activity
+import android.app.ActivityManager
+import android.app.Application
 import android.app.Dialog
 import android.content.Context
 import android.content.pm.PackageInfo
@@ -7,6 +9,7 @@ import android.content.pm.PackageManager
 import android.content.res.Resources
 import android.graphics.Color
 import android.os.Build
+import android.os.Process
 import android.util.DisplayMetrics
 import android.view.View
 import android.view.ViewGroup.MarginLayoutParams
@@ -20,7 +23,21 @@ import java.lang.Exception
 object KoAppUtil {
 
     /**
-     * 获取包信息.
+     * 获取进程名
+     */
+    fun getProcessName(context: Context?): String? {
+        if (context == null) return null
+        val manager = context.getSystemService(Application.ACTIVITY_SERVICE) as ActivityManager
+        for (processInfo in manager.runningAppProcesses) {
+            if (processInfo.pid == Process.myPid()) {
+                return processInfo.processName
+            }
+        }
+        return null
+    }
+
+    /**
+     * 获取包信息
      * @param context the context
      */
     fun getPackageInfo(context: Context): PackageInfo? {
@@ -34,11 +51,11 @@ object KoAppUtil {
     }
 
     /**
-     * 获取屏幕尺寸与密度.
+     * 获取屏幕尺寸与密度
      * @param context the context
      * @return mDisplayMetrics
      */
-    fun getDisplayMetrics(context: Context): DisplayMetrics {
+    fun getDisplayMetrics(context: Context?): DisplayMetrics {
         var resources = if (context == null) {
             Resources.getSystem()
         } else {

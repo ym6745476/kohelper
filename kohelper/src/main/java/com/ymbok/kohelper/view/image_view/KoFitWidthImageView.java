@@ -12,13 +12,13 @@ import android.util.AttributeSet;
  * Email 396196516@qq.com
  * Info 根据宽度自适应的ImageView
  */
-public class KoSuitableImageView extends AppCompatImageView {
+public class KoFitWidthImageView extends AppCompatImageView {
 
-    public KoSuitableImageView(Context context) {
+    public KoFitWidthImageView(Context context) {
         super(context);
     }
 
-    public KoSuitableImageView(Context context, AttributeSet attrs) {
+    public KoFitWidthImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 

@@ -1,9 +1,8 @@
-package com.ymbok.kohelper.app
+package com.ymbok.kohelper.component
 
 import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ymbok.kohelper.component.KoDataBingRecyclerViewHolder
 
 /**
  * Copyright ymbok.com
@@ -12,7 +11,7 @@ import com.ymbok.kohelper.component.KoDataBingRecyclerViewHolder
  * Email 396196516@qq.com
  * Info RecyclerView.Adapter 支持增加头和尾
  */
-abstract class KoRecyclerViewAdapter<T>(context: Context, var list: MutableList<T>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+abstract class KoRecyclerViewAdapter<T>(context: Context, var list: MutableList<T>) : RecyclerView.Adapter<KoDataBingRecyclerViewHolder>() {
 
     private var headerViewHolder: KoDataBingRecyclerViewHolder? = null
     private var footerViewHolder: KoDataBingRecyclerViewHolder? = null
@@ -49,20 +48,19 @@ abstract class KoRecyclerViewAdapter<T>(context: Context, var list: MutableList<
         return TYPE_NORMAL
     }
 
-    override  fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder{
+    override  fun onCreateViewHolder(parent: ViewGroup, viewType: Int): KoDataBingRecyclerViewHolder{
         if (viewType == TYPE_HEADER) {
             headerViewHolder = onCreateHeaderViewHolder(parent,viewType)
-            return headerViewHolder as RecyclerView.ViewHolder
+            return headerViewHolder!!
         } else if (viewType == TYPE_FOOTER) {
             footerViewHolder = onCreateFooterViewHolder(parent,viewType)
-            return footerViewHolder as RecyclerView.ViewHolder
+            return footerViewHolder!!
         } else {
             return onCreateRecyclerViewHolder(parent, viewType)
         }
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        holder as KoDataBingRecyclerViewHolder
+    override fun onBindViewHolder(holder: KoDataBingRecyclerViewHolder, position: Int) {
         val type = getItemViewType(position)
         if (type == TYPE_HEADER) {
             onBindHeaderRecyclerViewHolder(holder, position)

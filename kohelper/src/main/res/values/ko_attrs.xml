@@ -2,10 +2,7 @@
 <resources>
 
     <declare-styleable name="KoCircleImageView">
-        <attr name="border_width" format="dimension" />
-        <attr name="border_color" format="color" />
-        <attr name="border_overlay" format="boolean" />
-        <attr name="fill_color" format="color" />
+
     </declare-styleable>
 
     <declare-styleable name="KoAspectRatioImageView">
@@ -15,6 +12,11 @@
 
     <declare-styleable name="KoCornerImageView">
         <attr name="radius" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="KoPercentLayout">
+        <attr name="width_percent" format="integer"/>
+        <attr name="height_percent" format="integer"/>
     </declare-styleable>
 
 

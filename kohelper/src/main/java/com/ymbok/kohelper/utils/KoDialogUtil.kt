@@ -27,7 +27,7 @@ object KoDialogUtil {
     /**
      * 显示弹出框
      */
-    fun showAlertDialog(context: Context, title: String?, message: String, cancelListener: KoDialogOnClickListener, okListener: KoDialogOnClickListener):AlertDialog {
+    fun showAlertDialog(context: Context, title: String?, message: String?,cancelText:String,okText:String,cancelListener: KoDialogOnClickListener, okListener: KoDialogOnClickListener):AlertDialog {
         val view = View.inflate(context, R.layout.ko_view_dialog, null)
 
         val dialog:AlertDialog = AlertDialog.Builder(context).setView(view).create()
@@ -39,13 +39,22 @@ object KoDialogUtil {
             titleView.text = title
         }
 
-        view.findViewById<TextView>(R.id.dialog_message_text).text = message
+        message?.apply {
+            val messageLayout = view.findViewById<TextView>(R.id.dialog_message_layout)
+            messageLayout.visibility = View.VISIBLE
+            val messageView = view.findViewById<TextView>(R.id.dialog_message_text)
+            messageView.text = message
+        }
 
-        view.findViewById<Button>(R.id.dialog_button_cancel).setOnClickListener {
+        val cancelBtn = view.findViewById<Button>(R.id.dialog_button_cancel)
+        val okBtn = view.findViewById<Button>(R.id.dialog_button_ok)
+        cancelBtn.text = cancelText
+        okBtn.text = okText
+        cancelBtn.setOnClickListener {
             dialog.dismiss()
             cancelListener.onClick(dialog,it)
         }
-        view.findViewById<Button>(R.id.dialog_button_ok).setOnClickListener {
+        okBtn.setOnClickListener {
             okListener.onClick(dialog,it)
         }
 

@@ -3,40 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
-        android:id="@+id/toolbar_layout"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="35dip"
+            android:layout_height="35dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="8dip"
+            android:background="@drawable/ko_toolbar_button_bg"
+            android:padding="8dip"
+            android:src="@mipmap/ic_back"
+            app:tint="@color/ko_black" />
 
-            <ImageView
-                android:id="@+id/back_btn"
-                android:layout_width="35dip"
-                android:layout_height="35dip"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_margin="8dip"
-                android:background="@drawable/ko_toolbar_button_bg"
-                android:padding="8dip"
-                android:src="@mipmap/ic_back"
-                app:tint="@color/ko_black" />
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="10dip"
+            android:textColor="@color/ko_text_dark"
+            android:textFontWeight="600"
+            android:textSize="18sp"
+            tools:text="标题" />
 
-            <TextView
-                android:id="@+id/title_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:padding="10dip"
-                android:textColor="@color/ko_text_dark"
-                android:textFontWeight="600"
-                android:textSize="18sp"
-                tools:text="标题" />
+    </RelativeLayout>
 
-        </RelativeLayout>
-
-    </LinearLayout>
 </layout>
