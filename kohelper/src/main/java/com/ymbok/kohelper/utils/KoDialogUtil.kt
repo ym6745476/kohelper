@@ -1,14 +1,11 @@
 package com.ymbok.kohelper.utils
 import android.content.Context
 import android.graphics.PixelFormat
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import android.widget.PopupWindow
 import android.graphics.drawable.ColorDrawable
 import android.view.*
 import android.view.WindowManager
+import android.widget.*
 import com.ymbok.kohelper.R
 
 
@@ -40,7 +37,7 @@ object KoDialogUtil {
         }
 
         message?.apply {
-            val messageLayout = view.findViewById<TextView>(R.id.dialog_message_layout)
+            val messageLayout = view.findViewById<ScrollView>(R.id.dialog_message_layout)
             messageLayout.visibility = View.VISIBLE
             val messageView = view.findViewById<TextView>(R.id.dialog_message_text)
             messageView.text = message
@@ -107,7 +104,7 @@ object KoDialogUtil {
         }
 
         message?.apply {
-            val messageLayout = view.findViewById<TextView>(R.id.dialog_message_layout)
+            val messageLayout = view.findViewById<ScrollView>(R.id.dialog_message_layout)
             messageLayout.visibility = View.VISIBLE
             val messageView = view.findViewById<TextView>(R.id.dialog_message_text)
             messageView.text = message
