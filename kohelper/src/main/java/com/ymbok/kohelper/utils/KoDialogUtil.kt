@@ -94,7 +94,7 @@ object KoDialogUtil {
     /**
      * 显示确认框
      */
-    fun showConfirmDialog(context: Context, title: String?, message: String,okListener: KoDialogOnClickListener):AlertDialog {
+    fun showConfirmDialog(context: Context, title: String?, message: String?,okListener: KoDialogOnClickListener):AlertDialog {
         val view = View.inflate(context, R.layout.ko_view_dialog, null)
 
         val dialog:AlertDialog = AlertDialog.Builder(context).setView(view).create()
@@ -106,7 +106,13 @@ object KoDialogUtil {
             titleView.text = title
         }
 
-        view.findViewById<TextView>(R.id.dialog_message_text).text = message
+        message?.apply {
+            val messageLayout = view.findViewById<TextView>(R.id.dialog_message_layout)
+            messageLayout.visibility = View.VISIBLE
+            val messageView = view.findViewById<TextView>(R.id.dialog_message_text)
+            messageView.text = message
+        }
+
 
         (view.findViewById<Button>(R.id.dialog_button_cancel).parent as LinearLayout).visibility = View.GONE
 
