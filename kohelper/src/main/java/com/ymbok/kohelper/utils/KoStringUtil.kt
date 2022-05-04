@@ -99,6 +99,25 @@ object KoStringUtil {
         }
     }
 
+    /**
+     * 不足2个字符的在前面补“0”.
+     * @param str 指定的字符串
+     * @return 至少2个字符的字符串
+     */
+    fun formatNumberZero(str: String,size:Int): String {
+        var str = str
+        try {
+            if (str.length < size) {
+                for (i in str.length until size) {
+                    str = "0$str"
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return str
+    }
+
 
     /**
      * 字节数组转16进制字符串

@@ -22,7 +22,6 @@ import com.ymbok.kohelper.utils.logI
  * Info 滤镜效果的ImageView，获取焦点产生滤镜效果
  */
 open class KoFilterImageView : AppCompatImageView {
-    private val TAG:String = this.javaClass.simpleName
     private var touchFlag = 0
     private val handler = object : Handler(Looper.getMainLooper()) {
         override fun handleMessage(msg: Message) {

@@ -33,7 +33,7 @@ object KoActivityRouter {
         if (isHttp(path)) {
             val urlParams = parseUrl(path)
             urlParams.params["url"] = urlParams.url
-            execRoute(context, "/home/browser", urlParams)
+            execRoute(context, "/app/browser", urlParams)
         } else {
             // 注解路由
             execRoute(context, path)

@@ -18,7 +18,7 @@
             android:background="@drawable/ko_toolbar_button_bg"
             android:padding="8dip"
             android:src="@mipmap/ic_back"
-            app:tint="@color/ko_black" />
+            android:tint="@color/ko_black" />
 
         <TextView
             android:id="@+id/title_text"

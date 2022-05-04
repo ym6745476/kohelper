@@ -1,5 +1,6 @@
 package com.ymbok.kohelper.utils
 import android.content.Context
+import android.graphics.Color
 import android.graphics.PixelFormat
 import androidx.appcompat.app.AlertDialog
 import android.graphics.drawable.ColorDrawable
@@ -67,6 +68,11 @@ object KoDialogUtil {
     fun showViewDialog(context: Context, view: View):AlertDialog {
         val dialog = AlertDialog.Builder(context).setView(view).create()
         dialog.show()
+        dialog.window?.apply {
+            setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            setLayout((KoAppUtil.getDisplayMetrics(context).widthPixels * 0.80).toInt(), ViewGroup.LayoutParams.WRAP_CONTENT)
+
+        }
         return dialog
     }
 
@@ -79,8 +85,10 @@ object KoDialogUtil {
         val window: Window? = dialog.window
         window?.apply {
             val attributes = attributes
-            attributes.gravity = Gravity.CENTER
-            window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+            attributes.gravity = Gravity.BOTTOM
+            //状态栏变黑问题
+            val height = KoAppUtil.getDisplayMetrics(context).heightPixels - KoAppUtil.getStatusBarHeight(context)
+            window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, height)
             window.setBackgroundDrawableResource(android.R.color.transparent)
             window.setContentView(view)
 

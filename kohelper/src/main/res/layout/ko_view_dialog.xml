@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@android:color/white"
+    android:background="@drawable/ko_dialog_bg_r10"
     android:orientation="vertical">
 
     <LinearLayout
@@ -26,8 +26,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="标题"
-                android:textColor="@color/ko_text_dark"
-                android:textSize="15sp" />
+                android:textColor="@color/ko_black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <ScrollView
@@ -53,12 +54,17 @@
         </ScrollView>
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/ko_line"
+        android:layout_height="1dp">
+    </View>
+
 
     <LinearLayout
         android:id="@+id/dialog_btn_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dip"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -72,12 +78,18 @@
                 android:id="@+id/dialog_button_cancel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/ko_button_bg_transparent"
+                android:background="@drawable/ko_dialog_left_button_r10"
                 android:text="取消"
                 android:textColor="@color/ko_text_light"
                 android:textSize="15sp" />
 
         </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:background="@color/ko_line"
+            android:layout_height="match_parent">
+        </View>
 
         <LinearLayout
             android:layout_width="0dip"
@@ -90,7 +102,7 @@
                 android:id="@+id/dialog_button_ok"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/ko_button_bg_transparent"
+                android:background="@drawable/ko_dialog_right_button_r10"
                 android:text="确定"
                 android:textColor="@color/ko_color_primary"
                 android:textSize="15sp" />

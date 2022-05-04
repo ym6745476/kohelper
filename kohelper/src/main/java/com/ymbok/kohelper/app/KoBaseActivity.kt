@@ -10,13 +10,14 @@ import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 import com.ymbok.kohelper.R
 import com.ymbok.kohelper.utils.KoAppUtil
 import com.ymbok.kohelper.utils.KoDialogUtil
 import com.ymbok.kohelper.utils.logD
 import java.lang.ref.WeakReference
 
-open class KoBaseActivity : AppCompatActivity() {
+open class KoBaseActivity : FragmentActivity() {
 
     /**
      * 日志输出标志
@@ -71,10 +72,8 @@ open class KoBaseActivity : AppCompatActivity() {
      * 隐藏页面
      * @param rootView
      */
-    open fun hidePage(rootView: RelativeLayout, pageView: View?) {
-        if (pageView != null) {
-            (rootView as ViewGroup).removeView(pageView)
-        }
+    open fun hidePage(rootView: RelativeLayout, pageView: View) {
+        (rootView as ViewGroup).removeView(pageView)
     }
 
     open fun showLoading() {
