@@ -86,9 +86,8 @@ object KoDialogUtil {
         window?.apply {
             val attributes = attributes
             attributes.gravity = Gravity.BOTTOM
-            //状态栏变黑问题
-            val height = KoAppUtil.getDisplayMetrics(context).heightPixels - KoAppUtil.getStatusBarHeight(context)
-            window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, height)
+            decorView.setPadding( 0 , 0 , 0 , 0 )
+            window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
             window.setBackgroundDrawableResource(android.R.color.transparent)
             window.setContentView(view)
 
