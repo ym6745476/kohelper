@@ -54,6 +54,24 @@ open class KoBaseActivity : FragmentActivity() {
     }
 
     /**
+     * 隐藏页面
+     * @param rootView
+     * @param pageView
+     */
+    open fun hidePlaceView(rootView: RelativeLayout, pageView: View) {
+        (rootView as ViewGroup).removeView(pageView)
+    }
+
+    open fun showLoading() {
+        val loadingView = View.inflate(this, R.layout.ko_view_loading, null)
+        loadingDialog = KoDialogUtil.showLayer(this,loadingView)
+    }
+
+    open fun hideLoading() {
+        loadingDialog?.dismiss()
+    }
+
+    /**
      * 显示页面
      * @param rootView    容器RelativeLayout
      * @param imageResId  布局ID
@@ -66,23 +84,6 @@ open class KoBaseActivity : FragmentActivity() {
         emptyImage.setImageResource(imageResId)
         emptyText.text = text
         return showPlaceView(rootView,pageView)
-    }
-
-    /**
-     * 隐藏页面
-     * @param rootView
-     */
-    open fun hidePage(rootView: RelativeLayout, pageView: View) {
-        (rootView as ViewGroup).removeView(pageView)
-    }
-
-    open fun showLoading() {
-        val loadingView = View.inflate(this, R.layout.ko_view_loading, null)
-        loadingDialog = KoDialogUtil.showLayer(this,loadingView)
-    }
-
-    open fun hideLoading() {
-        loadingDialog?.dismiss()
     }
 
     override fun onDestroy() {

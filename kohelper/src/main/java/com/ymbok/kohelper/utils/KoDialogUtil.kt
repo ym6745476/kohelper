@@ -8,6 +8,7 @@ import android.view.*
 import android.view.WindowManager
 import android.widget.*
 import com.ymbok.kohelper.R
+import kotlinx.coroutines.Job
 
 
 /**
@@ -25,7 +26,7 @@ object KoDialogUtil {
     /**
      * 显示弹出框
      */
-    fun showAlertDialog(context: Context, title: String?, message: String?,cancelText:String,okText:String,cancelListener: KoDialogOnClickListener, okListener: KoDialogOnClickListener):AlertDialog {
+    fun showAlertDialog(context: Context, title: String?, message: String?, cancelText:String, okText:String, cancelListener:KoDialogOnClickListener, okListener: KoDialogOnClickListener):AlertDialog {
         val view = View.inflate(context, R.layout.ko_view_dialog, null)
 
         val dialog:AlertDialog = AlertDialog.Builder(context).setView(view).create()
