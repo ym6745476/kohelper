@@ -71,7 +71,7 @@ object KoDialogUtil {
         dialog.show()
         dialog.window?.apply {
             setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            setLayout((KoAppUtil.getDisplayMetrics(context).widthPixels * 0.80).toInt(), ViewGroup.LayoutParams.WRAP_CONTENT)
+            setLayout((KoAppUtil.getDisplayMetrics(context).widthPixels * 0.75).toInt(), ViewGroup.LayoutParams.WRAP_CONTENT)
 
         }
         return dialog
@@ -131,16 +131,20 @@ object KoDialogUtil {
 
     }
 
+    fun showDropDownWindow(context: Context, contentView: View, anchorView:View):PopupWindow {
+        return showDropDownWindow(context,contentView,anchorView,ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+    }
+
     /**
      * 在点击的View下方显示层
+     *
      */
-    fun showDropDownWindow(context: Context, contentView: View, anchorView:View):PopupWindow {
-        val popupWindow = PopupWindow(contentView,ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+    fun showDropDownWindow(context: Context, contentView: View, anchorView:View,width:Int,height:Int):PopupWindow {
+        val popupWindow = PopupWindow(contentView,width,height)
         // 设置背景
         popupWindow.setBackgroundDrawable(ColorDrawable())
         // 外部点击事件
         popupWindow.isOutsideTouchable = true
-
 
         val appScreenLocation = IntArray(2)
         val appRootView: View = anchorView.rootView

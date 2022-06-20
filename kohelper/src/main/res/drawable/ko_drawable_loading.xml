@@ -7,6 +7,6 @@
     android:pivotX="50.0%"
     android:pivotY="50.0%"
     android:repeatMode="restart"
-    android:drawable="@mipmap/ic_loading">
+    android:drawable="@mipmap/ko_ic_loading">
 
 </animated-rotate>

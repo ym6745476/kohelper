@@ -18,7 +18,7 @@
             android:layout_margin="8dip"
             android:background="@drawable/ko_toolbar_button_bg"
             android:padding="8dip"
-            android:src="@mipmap/ic_back"
+            android:src="@mipmap/ko_ic_back"
             android:tint="@color/ko_white" />
 
         <TextView

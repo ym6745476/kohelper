@@ -56,7 +56,7 @@
             android:id="@+id/dialog_close_button"
             android:layout_width="36dip"
             android:layout_height="36dip"
-            android:background="@mipmap/ic_close" />
+            android:background="@mipmap/ko_ic_close_circle" />
     </LinearLayout>
 
 

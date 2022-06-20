@@ -14,7 +14,7 @@
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
         android:scaleType="center"
-        android:src="@mipmap/ic_loading"/>
+        android:src="@mipmap/ko_ic_loading"/>
 
     <TextView
         android:id="@+id/empty_text"

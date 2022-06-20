@@ -40,6 +40,14 @@ object KoActivityRouter {
         }
     }
 
+    fun routeWeb(context: Context, url: String,extendParams: UrlParams) {
+        logI(TAG, "开始Route：$url")
+        val urlParams = UrlParams()
+        urlParams.params["url"] = url
+        urlParams.params.putAll(extendParams.params)
+        execRoute(context, "/app/browser", urlParams)
+    }
+
     fun routeFinish(context: Context, path: String) {
         route(context, path)
         (context as Activity).finish()

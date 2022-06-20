@@ -81,12 +81,12 @@ object KoAppUtil {
     }
 
     /**
-     * 设置状态栏颜色
+     * 设置状态栏颜色和状态栏文字颜色
      * @param activity
      * @param color
-     * @param isLight
+     * @param whiteTextColor
      */
-    fun setWindowStatusBarColor(activity: Activity, color: Int, isLight: Boolean) {
+    fun setWindowStatusBarColor(activity: Activity, color: Int, whiteTextColor: Boolean) {
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 val window = activity.window
@@ -96,39 +96,13 @@ object KoAppUtil {
                 window.navigationBarColor = color
                 //android6.0以后可以对状态栏文字颜色和图标进行修改
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (isLight) {
-                        //黑色文字
-                        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-                    } else {
+                    if (whiteTextColor) {
                         //白色文字
                         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                    }
-                }
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-    }
+                    } else {
+                        //黑色文字
+                        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
-    /**
-     * 设置状态栏颜色
-     * @param dialog
-     * @param color
-     * @param isLight
-     */
-    fun setWindowStatusBarColor(dialog: Dialog, color: Int, isLight: Boolean) {
-        try {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                val window = dialog.window
-                window!!.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-                window.statusBarColor = color
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (isLight) {
-                        //黑色文字
-                        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-                    } else {
-                        //白色文字
-                        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                     }
                 }
             }
@@ -139,7 +113,7 @@ object KoAppUtil {
 
 
     /**
-     * 设置透明状态栏 和 文字颜色
+     * 设置透明状态栏和状态栏文字颜色
      * @param activity
      */
     fun setWindowStatusBarTransparent(activity: Activity, whiteTextColor: Boolean) {
@@ -181,6 +155,35 @@ object KoAppUtil {
         }
     }
 
+
+    /**
+     * 设置Dialog状态栏颜色
+     * @param dialog
+     * @param color
+     * @param whiteTextColor
+     */
+    fun setWindowStatusBarColor(dialog: Dialog, color: Int, whiteTextColor: Boolean) {
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                val window = dialog.window
+                window!!.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+                window.statusBarColor = color
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (whiteTextColor) {
+                        //白色文字
+                        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    } else {
+                        //黑色文字
+                        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
     /**
      * 设置透明状态栏 + 沉浸
      * @param activity 当前展示的activity
@@ -189,14 +192,12 @@ object KoAppUtil {
      */
     fun setWindowStatusBarTransparent(activity: Activity, toolbar: Toolbar) {
         setWindowStatusBarTransparent(activity, true)
-        if (toolbar != null) {
-            val layoutParams = toolbar.layoutParams as MarginLayoutParams
-            layoutParams.setMargins(
-                    layoutParams.leftMargin,
-                    layoutParams.topMargin + getStatusBarHeight(activity),
-                    layoutParams.rightMargin,
-                    layoutParams.bottomMargin)
-        }
+        val layoutParams = toolbar.layoutParams as MarginLayoutParams
+        layoutParams.setMargins(
+                layoutParams.leftMargin,
+                layoutParams.topMargin + getStatusBarHeight(activity),
+                layoutParams.rightMargin,
+                layoutParams.bottomMargin)
         return
     }
 

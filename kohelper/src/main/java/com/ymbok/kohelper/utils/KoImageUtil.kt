@@ -1069,7 +1069,7 @@ object KoImageUtil {
      * @return
      */
     fun tint9PatchDrawableFrame(context: Context, @ColorInt tintColor: Int): Drawable? {
-        val ninePatchDrawable = context.resources.getDrawable(R.mipmap.bg_toast,null) as NinePatchDrawable
+        val ninePatchDrawable = context.resources.getDrawable(R.mipmap.ko_bg_toast,null) as NinePatchDrawable
         ninePatchDrawable.colorFilter = PorterDuffColorFilter(tintColor, PorterDuff.Mode.SRC_IN)
         return ninePatchDrawable
     }
