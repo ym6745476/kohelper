@@ -8,7 +8,6 @@ import android.view.*
 import android.view.WindowManager
 import android.widget.*
 import com.ymbok.kohelper.R
-import kotlinx.coroutines.Job
 
 
 /**
@@ -174,7 +173,7 @@ object KoDialogUtil {
         //maskView.setBackgroundColor(0x7f000000)
 
         val maskView = View.inflate(context, R.layout.ko_view_mask, null)
-        maskView.findViewById<LinearLayout>(R.id.mask_top_view).layoutParams.height = KoUnitUtil.dip2px(context,y.toFloat()).toInt()
+        maskView.findViewById<LinearLayout>(R.id.mask_top_view).layoutParams.height = KoViewUtil.dip2px(context,y.toFloat()).toInt()
 
         maskView.fitsSystemWindows = false
         /* maskView.setOnKeyListener(object:View.OnKeyListener{

@@ -2,6 +2,7 @@ package com.ymbok.kohelper.app
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.view.View
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.callback.NavigationCallback
@@ -13,6 +14,12 @@ import java.util.HashMap
 object KoActivityRouter {
 
     val TAG: String = this.javaClass.simpleName
+
+    fun <T> startActivity(context: Context, cls:Class<T>){
+        Intent(context, cls).apply {
+            context.startActivity(this)
+        }
+    }
 
     fun clickRoute(view: View, path: String) {
         view.setOnClickListener {

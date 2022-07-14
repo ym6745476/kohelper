@@ -5,7 +5,7 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
-import com.ymbok.kohelper.utils.KoUnitUtil
+import com.ymbok.kohelper.utils.KoViewUtil
 
 class KoRecyclerViewHorizontalDecoration: ItemDecoration {
 
@@ -15,7 +15,7 @@ class KoRecyclerViewHorizontalDecoration: ItemDecoration {
 
     constructor(context: Context, space: Int) {
         this.context = context
-        this.space = KoUnitUtil.dip2px(context, space.toFloat())
+        this.space = KoViewUtil.dip2px(context, space.toFloat())
     }
 
     override fun getItemOffsets(outRect: Rect, view: View,parent: RecyclerView, state: RecyclerView.State) {

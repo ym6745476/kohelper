@@ -1,15 +1,17 @@
 package com.ymbok.kohelper.utils
 import android.content.Context
-import android.content.res.Resources
+import android.text.Layout
+import android.text.TextPaint
 import android.util.DisplayMetrics
 import android.util.TypedValue
+import kotlin.math.ceil
 
 /**
  * 单位转换工具类
  * @author ym6745476
  * @since  2022/03/14
  */
-object KoUnitUtil {
+object KoViewUtil {
 
     fun applyDimension(unit: Int, value: Float,
                        metrics: DisplayMetrics): Float {
@@ -43,5 +45,25 @@ object KoUnitUtil {
     fun px2sp(context: Context, pxValue: Float): Float {
         val displayMetrics = KoAppUtil.getDisplayMetrics(context)
         return pxValue / displayMetrics.scaledDensity
+    }
+
+    /**
+     * 获得文字的宽度
+     * @param text the text
+     * @param paint the paint
+     * @return the string width
+     */
+    fun getDesiredWidth(text: String, paint: TextPaint): Float {
+        return Layout.getDesiredWidth(text, paint)
+    }
+
+    /**
+     * 获取文字的高度
+     * @param paint the textPaint
+     * @return the string height
+     */
+    fun getDesiredHeight(paint: TextPaint): Float {
+        val fm = paint.fontMetrics
+        return ceil((fm.descent - fm.ascent).toDouble()).toFloat()
     }
 }

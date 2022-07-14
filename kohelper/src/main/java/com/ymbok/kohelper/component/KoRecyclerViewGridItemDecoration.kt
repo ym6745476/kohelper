@@ -5,7 +5,7 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
-import com.ymbok.kohelper.utils.KoUnitUtil
+import com.ymbok.kohelper.utils.KoViewUtil
 
 class KoRecyclerViewGridItemDecoration: ItemDecoration {
 
@@ -20,7 +20,7 @@ class KoRecyclerViewGridItemDecoration: ItemDecoration {
 
     constructor(context: Context, space: Int, column: Int) {
         this.context = context
-        this.space = KoUnitUtil.dip2px(context, space.toFloat())
+        this.space = KoViewUtil.dip2px(context, space.toFloat())
         this.column = column
         hasHeader = false
         hasFooter = false
@@ -28,7 +28,7 @@ class KoRecyclerViewGridItemDecoration: ItemDecoration {
 
     constructor(context: Context, space: Int, column: Int, hasHeader: Boolean, hasFooter: Boolean) {
         this.context = context
-        this.space = KoUnitUtil.dip2px(context, space.toFloat())
+        this.space = KoViewUtil.dip2px(context, space.toFloat())
         this.column = column
         this.hasHeader = hasHeader
         this.hasFooter = hasFooter

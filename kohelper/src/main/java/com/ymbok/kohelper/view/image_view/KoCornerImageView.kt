@@ -1,15 +1,11 @@
 package com.ymbok.kohelper.view.image_view
 
 import android.content.Context
-import android.content.res.TypedArray
 import android.graphics.Canvas
 import android.graphics.Path
 import android.util.AttributeSet
-import android.view.View.MeasureSpec
-import androidx.appcompat.widget.AppCompatImageView
 import com.ymbok.kohelper.R
-import com.ymbok.kohelper.utils.KoUnitUtil
-import com.ymbok.kohelper.utils.KoUnitUtil.dip2px
+import com.ymbok.kohelper.utils.KoViewUtil.dip2px
 
 /**
  * Copyright ymbok.com

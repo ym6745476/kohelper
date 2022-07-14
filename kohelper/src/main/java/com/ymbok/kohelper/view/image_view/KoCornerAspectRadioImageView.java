@@ -4,12 +4,10 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Path;
-import android.os.Build;
 import android.util.AttributeSet;
-import android.view.View;
 
 import com.ymbok.kohelper.R;
-import com.ymbok.kohelper.utils.KoUnitUtil;
+import com.ymbok.kohelper.utils.KoViewUtil;
 
 /**
  * Copyright ymbok.com
@@ -35,7 +33,7 @@ public class KoCornerAspectRadioImageView extends KoAspectRatioImageView {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.KoAspectRatioImageView);
         try {
             int radiusDip = typedArray.getInteger(R.styleable.KoCornerImageView_radius, 0);
-            radius = KoUnitUtil.INSTANCE.dip2px(context,radiusDip);
+            radius = KoViewUtil.INSTANCE.dip2px(context,radiusDip);
         } finally {
             typedArray.recycle();
         }

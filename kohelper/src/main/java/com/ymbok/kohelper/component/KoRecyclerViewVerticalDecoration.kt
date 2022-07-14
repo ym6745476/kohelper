@@ -7,7 +7,7 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
-import com.ymbok.kohelper.utils.KoUnitUtil
+import com.ymbok.kohelper.utils.KoViewUtil
 
 /**
  * Copyright ymbok.com
@@ -33,7 +33,7 @@ class KoRecyclerViewVerticalDecoration : ItemDecoration {
             this.space = 1
             paint!!.color = spaceColor
         } else if (space > 0) {
-            this.space = KoUnitUtil.dip2px(context, space.toFloat()).toInt()
+            this.space = KoViewUtil.dip2px(context, space.toFloat()).toInt()
             paint!!.color = spaceColor
         }
         paint!!.style = Paint.Style.FILL
@@ -48,7 +48,7 @@ class KoRecyclerViewVerticalDecoration : ItemDecoration {
             this.space = 1
             paint!!.color = spaceColor
         } else if (space > 0) {
-            this.space = KoUnitUtil.dip2px(context, space.toFloat()).toInt()
+            this.space = KoViewUtil.dip2px(context, space.toFloat()).toInt()
             paint!!.color = spaceColor
         }
         paint!!.style = Paint.Style.FILL
@@ -93,7 +93,7 @@ class KoRecyclerViewVerticalDecoration : ItemDecoration {
 
     fun setLeftRightPadding(leftRightPadding: Int) {
         context?.also {
-            this.leftRightPadding = KoUnitUtil.dip2px(it, leftRightPadding.toFloat()).toInt()
+            this.leftRightPadding = KoViewUtil.dip2px(it, leftRightPadding.toFloat()).toInt()
         }
 
     }
